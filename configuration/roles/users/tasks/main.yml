@@ -1,0 +1,36 @@
+# User account standards:
+# - Initially create the account with an empty password
+# - Expire the password so the user must change it upon login
+# - Users must have a SSH public key in their authorized keys
+#
+# SSH should be configured to allow only public key logins.
+
+- name: Create 'deploy' user
+  user:
+    name: deploy
+    comment: Deployer
+    shell: /sbin/nologin
+
+- name: Create admin users
+  user:
+    name: '{{ item.name }}'
+    comment: '{{ item.full_name }}'
+    groups:
+      - sudo
+    shell: /bin/bash
+    password: ''
+    update_password: on_create
+  with_items: '{{ admin_users }}'
+  register: add_user
+
+- name: Expire new admin user passwords
+  command: chage -d 0 {{ item.item.name }}
+  with_items: '{{ add_user.results }}'
+  when: item.changed == true
+
+- name: Add SSH authorized keys for new admin users
+  authorized_key:
+    user: '{{ item.item.name }}'
+    key: '{{ item.item.authorized_key }}'
+  with_items: '{{ add_user.results }}'
+  when: item.changed == true

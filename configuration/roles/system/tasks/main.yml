@@ -1,0 +1,9 @@
+- name: Install aptitude
+  apt:
+    name: aptitude
+    state: present
+
+- name: Update and upgrade packages
+  apt:
+    upgrade: yes
+    update_cache: yes

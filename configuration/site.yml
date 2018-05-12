@@ -1,0 +1,11 @@
+- hosts: all
+  become: yes
+  become_user: root
+  roles:
+    - users
+    - ssh
+    - geerlingguy.firewall
+    - geerlingguy.docker
+    - system
+  vars_files:
+    - vars.yml

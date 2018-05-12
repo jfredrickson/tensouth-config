@@ -1,0 +1,26 @@
+# Set all mandatory variables here.
+
+sshd_port: 22
+
+# You must define at least one admin user or you won't be able to login:
+
+#admin_users:
+#  - name: admin1
+#    full_name: Admin One
+#    authorized_key: https://github.com/admin1.keys
+#  - name: admin2
+#    full_name: Admin Two
+#    authorized_key: https://github.com/admin2.keys
+
+docker_users:
+  - admin1
+  - admin2
+
+firewall_allowed_tcp_ports:
+  - "{{ sshd_port }}"
+  - "80"
+  - "443"
+
+# Work around bug in geerlingguy.firewall
+firewall_ip6_additional_rules:
+  - "ip6tables -I INPUT -p icmpv6 -j ACCEPT"
