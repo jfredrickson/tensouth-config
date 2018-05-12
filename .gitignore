@@ -1,4 +1,10 @@
-*.retry
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfvars
 
+# Ansible
+*.retry
 vars.yml
 inventory
