@@ -17,7 +17,7 @@ Uses Ansible to maintain system configuration on the server.
 ### Prerequisites
 
 ```
-ansible-galaxy install geerlingguy.firewall geerlingguy.docker
+ansible-galaxy install geerlingguy.firewall geerlingguy.pip geerlingguy.docker
 ```
 
 ### Initial deployment

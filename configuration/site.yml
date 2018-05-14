@@ -5,6 +5,7 @@
     - users
     - ssh
     - geerlingguy.firewall
+    - geerlingguy.pip
     - geerlingguy.docker
     - docker
     - system
