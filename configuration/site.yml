@@ -6,6 +6,7 @@
     - ssh
     - geerlingguy.firewall
     - geerlingguy.docker
+    - docker
     - system
   vars_files:
     - vars.yml
