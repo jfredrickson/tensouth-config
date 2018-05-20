@@ -29,4 +29,3 @@ firewall_ip6_additional_rules:
 #backups_s3_bucket: s3_bucket_name
 #backups_aws_access_key_id: id
 #backups_aws_secret_access_key: key
-#restic_password: somepassword
