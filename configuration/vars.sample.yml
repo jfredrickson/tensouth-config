@@ -24,3 +24,9 @@ firewall_allowed_tcp_ports:
 # Work around bug in geerlingguy.firewall
 firewall_ip6_additional_rules:
   - "ip6tables -I INPUT -p icmpv6 -j ACCEPT"
+
+# Backups
+#backups_s3_bucket: s3_bucket_name
+#backups_aws_access_key_id: id
+#backups_aws_secret_access_key: key
+#restic_password: somepassword

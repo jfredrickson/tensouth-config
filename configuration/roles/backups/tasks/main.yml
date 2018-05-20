@@ -1,0 +1,13 @@
+- name: Install restic
+  apt:
+    name: restic
+    state: present
+
+- name: Configure sshd
+  template:
+    src: backups.env.j2
+    dest: /root/backups.env
+    owner: root
+    group: root
+    mode: '0600'
+    backup: yes

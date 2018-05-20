@@ -8,6 +8,7 @@
     - geerlingguy.pip
     - geerlingguy.docker
     - docker
+    - backups
     - system
   vars_files:
     - vars.yml
