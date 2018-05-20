@@ -3,7 +3,7 @@
     name: restic
     state: present
 
-- name: Configure sshd
+- name: Configure environment variables for backups
   template:
     src: backups.env.j2
     dest: /root/backups.env
