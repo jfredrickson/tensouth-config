@@ -4,10 +4,10 @@
     name: reverse-proxy
 
 # Filesystem location for Docker container definitions.
-- name: Creates directory
+- name: Create directory for Docker containers
   file:
     path: /srv/containers
     state: directory
     owner: deploy
     group: deploy
-    mode: 2775
+    mode: "2775"
