@@ -11,3 +11,4 @@
     - system
   vars_files:
     - vars.yml
+    - aws.yml
