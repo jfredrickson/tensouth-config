@@ -2,3 +2,12 @@
 - name: Create a reverse proxy network
   docker_network:
     name: reverse-proxy
+
+# Filesystem location for Docker container definitions.
+- name: Creates directory
+  file:
+    path: /srv/containers
+    state: directory
+    owner: deploy
+    group: deploy
+    mode: 2775
