@@ -6,6 +6,6 @@ output "backups_user_secret" {
   value = "${aws_iam_access_key.backups.secret}"
 }
 
-output "s3_bucket" {
+output "backups_s3_bucket" {
   value = "${aws_s3_bucket.backups.id}"
 }

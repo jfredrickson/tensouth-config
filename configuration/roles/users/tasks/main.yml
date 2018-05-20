@@ -17,6 +17,7 @@
     comment: '{{ item.full_name }}'
     groups:
       - sudo
+      - deploy
     shell: /bin/bash
     password: ''
     update_password: on_create

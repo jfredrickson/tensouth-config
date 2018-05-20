@@ -7,4 +7,5 @@
 # Ansible
 *.retry
 vars.yml
+aws.yml
 inventory
