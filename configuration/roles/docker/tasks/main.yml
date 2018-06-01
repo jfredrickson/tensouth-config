@@ -11,3 +11,12 @@
     owner: deploy
     group: deploy
     mode: "2775"
+
+- name: Install Traefik reverse proxy
+  git:
+    repo: https://github.com/jfredrickson/tensouth-proxy.git
+    dest: /srv/containers/tensouth-proxy
+
+- name: Start Traefik reverse proxy
+  docker_service:
+    project_src: /srv/containers/tensouth-proxy/traefik
