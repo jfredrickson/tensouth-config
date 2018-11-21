@@ -1,9 +1,7 @@
-# This network will be used by all Docker containers that need to respond to reverse proxy requests.
 - name: Create a reverse proxy network
   docker_network:
     name: reverse-proxy
 
-# Filesystem location for Docker container definitions.
 - name: Create directory for Docker containers
   file:
     path: /srv/containers
@@ -16,6 +14,11 @@
   git:
     repo: https://github.com/jfredrickson/tensouth-proxy.git
     dest: /srv/containers/tensouth-proxy
+
+- name: Ensure Traefik certificate store has proper permissions
+  file:
+    path: /srv/containers/tensouth-proxy/traefik/acme.json
+    mode: 0600
 
 - name: Start Traefik reverse proxy
   docker_service:
