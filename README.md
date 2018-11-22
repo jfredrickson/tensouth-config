@@ -23,8 +23,8 @@ ansible-galaxy install geerlingguy.firewall geerlingguy.pip geerlingguy.docker
 ### Initial deployment
 
 1. Provision a server
-2. Add the server IP address to the `inventory` file (see `inventory.sample`)
-3. Copy `vars.sample.yml` to `vars.yml` and edit
+2. Add the server IP address to the `inventory` file (see `inventory.example`)
+3. Copy `vars.example.yml` to `vars.yml` and edit
 4. Run initial configuration: `ansible-playbook site.yml -i inventory -u root -k`
 
 At this point, the SSH port will change and root can no longer log in via SSH. Instead, use a sudo-enabled admin user as specified in `vars.yml`:
